@@ -33,15 +33,19 @@ The project also supports image-based resumes (OCR) and allows recruiters to dow
 ---
 
 ## Project Structure
-Automated_Resume_Screening_System/
-│── app.py # Streamlit web app
-│── resume_parser.py # Resume parsing functions (skills, education, experience, OCR)
-│── model.pkl # Trained ML model
-│── mock_resume_data.csv # Mock training dataset
-│── top_ranked_candidates.html # Downloadable ranked candidates (generated)
-│── requirements.txt # Project dependencies
-│── README.md # Project documentation
-│── resumes/ # Uploaded resumes folder
+```
+
+Automated\_Resume\_Screening\_System/
+│── app.py                     # Streamlit web app
+│── resume\_parser.py            # Resume parsing functions (skills, education, experience, OCR)
+│── model.pkl                   # Trained ML model
+│── mock\_resume\_data.csv        # Mock training dataset
+│── top\_ranked\_candidates.html  # Downloadable ranked candidates (generated)
+│── requirements.txt            # Project dependencies
+│── README.md                   # Project documentation
+│── resumes/                    # Uploaded resumes folder
+
+````
 
 ---
 
@@ -51,73 +55,74 @@ Automated_Resume_Screening_System/
 ```bash
 git clone https://github.com/mayuri-jagtap/Automated_Resume_Screening_System.git
 cd Automated_Resume_Screening_System
+````
 
----
+### 2. Install dependencies
 
-## Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
----
+### 3. Run the application
 
-## Run the application
+```bash
 streamlit run app.py
+```
 
 ---
 
 ## Usage
 
-- Open the Streamlit app in your browser
-
-- Upload resumes (PDF/DOCX/JPG/PNG)
-
-- Set recruiter preferences (weightages for skills, education, etc.)
-
-- View ranked candidates with analytics
-
-- Download Top N candidates with clickable resume links
+1. Open the Streamlit app in your browser
+2. Upload resumes (PDF/DOCX/JPG/PNG)
+3. Set recruiter preferences (weightages for skills, education, etc.)
+4. View ranked candidates with analytics
+5. Download Top N candidates with clickable resume links
 
 ---
 
 ## Example Recruiter Preferences
 
-- Experience weight: 40%
-
-- Skills weight: 30%
-
-- Education weight: 20%
-
-- Certifications weight: 10%
+* Experience weight: 40%
+* Skills weight: 30%
+* Education weight: 20%
+* Certifications weight: 10%
 
 ---
 
 ## Future Enhancements
 
-- Support for real-time job description matching
-
-- Advanced NLP-based skill extraction
-
-- Cloud deployment (AWS/GCP)
-
-- Integration with ATS (Applicant Tracking Systems)
+* Support for real-time job description matching
+* Advanced NLP-based skill extraction
+* Cloud deployment (AWS/GCP)
+* Integration with ATS (Applicant Tracking Systems)
 
 ---
 
 ## Contributors
-Mayuri Jagtap – MIT ADT University
+
+* **Mayuri Jagtap** – MIT ADT University
 
 ---
 
-## Requirements 
-- streamlit
-- pandas
-- numpy
-- scikit-learn
-- matplotlib
-- seaborn
-- pillow
-- pdf2image
-- pytesseract
-- python-docx
-- PyPDF2
-- pdfminer.six
-- rapidfuzz
+## Requirements
+
+```
+streamlit
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+pillow
+pdf2image
+pytesseract
+python-docx
+PyPDF2
+pdfminer.six
+rapidfuzz
+```
+
+
+
+
