@@ -10,7 +10,7 @@ The project also supports image-based resumes (OCR) and allows recruiters to dow
 
 ## Features
 - Upload resumes in PDF, DOCX, JPG, PNG formats  
-- OCR support for scanned/image resumes using Tesseract  
+- OCR support for scanned/image resumes using Tesseract & Poppler  
 - Customizable recruiter preferences (weightages for experience, education, skills, certifications)  
 - ML model (Scikit-learn) trained on mock resume data  
 - Analytics dashboard:
@@ -51,33 +51,66 @@ Automated\_Resume\_Screening\_System/
 
 ## Installation & Setup
 
-### 1. Clone the repository
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/mayuri-jagtap/Automated_Resume_Screening_System.git
 cd Automated_Resume_Screening_System
 ````
 
-### 2. Install dependencies
+### 2. Install Dependencies
+
+Make sure you have **Python 3.9+** installed. Then install required libraries:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the application
+### 3. Install Poppler (Required for PDF OCR)
+
+We use `pdf2image` which depends on Poppler for converting PDFs to images.
+
+* **Windows**
+
+  1. Download Poppler from: [Poppler for Windows](https://github.com/oschwartz10612/poppler-windows/releases/)
+  2. Extract the ZIP file.
+  3. Copy the path of the `poppler-xx\Library\bin` folder.
+     (Example: `C:\Users\YourName\Downloads\poppler-25.07.0\Library\bin`)
+  4. Add this path to your **System Environment Variables → Path**.
+  5. Verify installation:
+
+     ```bash
+     pdfinfo -v
+     ```
+
+* **Linux (Ubuntu/Debian)**
+
+  ```bash
+  sudo apt-get install poppler-utils
+  ```
+
+* **Mac (Homebrew)**
+
+  ```bash
+  brew install poppler
+  ```
+
+### 4. Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
+Now open your browser at:
+ `http://localhost:8501/`
+
 ---
 
 ## Usage
 
-1. Open the Streamlit app in your browser
-2. Upload resumes (PDF/DOCX/JPG/PNG)
-3. Set recruiter preferences (weightages for skills, education, etc.)
-4. View ranked candidates with analytics
-5. Download Top N candidates with clickable resume links
+1. Upload resumes (`.pdf`, `.docx`, `.jpg`, `.png`).
+2. Set recruiter preferences (experience, skills, education, certifications).
+3. View ranked candidates with analytics (charts).
+4. Download Top N candidates with clickable resume links in **HTML format**.
 
 ---
 
@@ -101,28 +134,26 @@ streamlit run app.py
 
 ## Contributors
 
-* **Mayuri Jagtap** – MIT ADT University
+* Mayuri Jagtap – MIT ADT University
 
 ---
 
 ## Requirements
 
-```
-streamlit
-pandas
-numpy
-scikit-learn
-matplotlib
-seaborn
-pillow
-pdf2image
-pytesseract
-python-docx
-PyPDF2
-pdfminer.six
-rapidfuzz
-```
+* streamlit
+* pandas
+* numpy
+* scikit-learn
+* matplotlib
+* seaborn
+* pillow
+* pdf2image
+* pytesseract
+* python-docx
+* PyPDF2
+* pdfminer.six
+* rapidfuzz
 
-
+```
 
 
